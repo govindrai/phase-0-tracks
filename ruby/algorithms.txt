@@ -1,0 +1,9 @@
+travel to the end of the hallway
+click the lighted yellow button that says "up" above it
+wait until the doors have opened
+step into the elevator
+turn around and go to one side of the elevator
+if there is not a number pad, go to the other side
+press the lighted yellow button with number of the floor you wish to travel to
+travel to the middle of the elevator
+exit when doors open
