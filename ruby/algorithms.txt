@@ -7,3 +7,18 @@ if there is not a number pad, go to the other side
 press the lighted yellow button with number of the floor you wish to travel to
 travel to the middle of the elevator
 exit when doors open
+
+washing dishes
+turn on faucet to left
+wait until water reaches 95 degrees
+soak scrubber with water and soap
+for each dish in the sink
+	apply three seconds of water
+turn off water
+for each dish in the sink	
+	scrub dish with scrubber
+turn on water
+for each dish in the sink
+        apply 10 seconds of water
+	rack dish in dish rack
+turn off water
