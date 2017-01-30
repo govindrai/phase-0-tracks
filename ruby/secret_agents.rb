@@ -30,7 +30,7 @@ def encrypt(str_to_encrypt)
             encrypted_string += char
         end
     end
-    puts encrypted_string
+    return encrypted_string
 end
 
 def decrypt(str_to_decrypt)
@@ -45,10 +45,27 @@ def decrypt(str_to_decrypt)
             decrypted_string += alphabet[decreased_letter_index - 1]
         end
     end
-    puts decrypted_string
+    return decrypted_string
 end
 
-encrypt("abc") # should return "bcd"
-encrypt("zed") # should return "afe"
-decrypt("bcd") # should return "abc"
-decrypt("afe") # should return "zed"
+# p encrypt("abc") # should return "bcd"
+# p encrypt("zed") # should return "afe"
+# p decrypt("bcd") # should return "abc"
+# p decrypt("afe") # should return "zed"
+
+# # Nested method call both decrypt and encrypt take strings and encrypt returns a string
+# p decrypt(encrypt('swordfish'))
+
+puts "Would you like to encrypt or decrypt a password?"
+encrypt_or_decrypt = gets.chomp
+
+puts "What is the password that you would like to #{encrypt_or_decrypt}?"
+password = gets.chomp
+
+if encrypt_or_decrypt == 'encrypt'
+    crypt_password = encrypt(password)
+else
+    crypt_password = decrypt(password)
+end
+
+puts "OK. Your #{encrypt_or_decrypt}ed password is #{crypt_password}."
