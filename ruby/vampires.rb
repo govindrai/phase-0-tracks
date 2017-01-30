@@ -22,15 +22,33 @@ while num_of_applicants != 0 do
     puts "Would you like to enroll in the company's health insurance? (Y/N)"
     enroll = gets.chomp
 
+    puts "Please list all allergies. Type 'done' when finished."
+    allergies = []
+    allergy = gets.chomp
+    allergies.push(allergy)
+
+    while allergy != 'done' do
+        allergy = gets.chomp
+        if allergy == 'sunshine'
+            sunshine = true
+            break
+        end
+        allergies.push(allergy)
+    end
+
     correct_age = checkYear(age,year)
     garlic = garlic == 'Y'
     enroll = enroll == 'Y'
 
-    if correct_age && (garlic || enroll)
-        result = "Probably not a vampire"
-    end
+    if !sunshine
+        if correct_age && (garlic || enroll)
+            result = "Probably not a vampire"
+        end
 
-    if !correct_age && (!garlic || !enroll)
+        if !correct_age && (!garlic || !enroll)
+            result = "Probably a vampire"
+        end
+    else
         result = "Probably a vampire"
     end
 
@@ -50,3 +68,5 @@ while num_of_applicants != 0 do
 
     num_of_applicants -= 1
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
