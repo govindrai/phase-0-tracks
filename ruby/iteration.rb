@@ -7,7 +7,7 @@ end
 
 block_taking_method { |message| puts message }
 
-color_array = ['yellow','orange', 'green']
+color_array = ['blue', 'yellow','orange', 'green', 'indigo', 'red', 'purple', 'brown']
 age_hash = {rebecca:25, george:'23', layla:'27'}
 
 # Iteration with .each
@@ -32,8 +32,6 @@ color_array.map! do |color|
 end
 puts "Hash after iterative mapping: #{color_array}"
 
-# puts "Hash before iterative mapping: #{age_hash}"
-# age_hash.map! do |person, age|
-#     puts "#{person} is #{age+1} years old"
-# end
-# puts "Hash after iterative mapping: #{age_hash}"
+# Other block methods for arrays/hashes
+
+color_array.delete_if { |color| color[0] == 'b'}
