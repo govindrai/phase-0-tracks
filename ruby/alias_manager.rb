@@ -11,9 +11,12 @@
 def agent_spy_name (full_name)
     vowels = 'aeiou'
     alphabet = 'bcdfghjklmnpqrstvwxyz'
+
     # split the name by space, reverse the array, join it by a space and split it
     swapped_name = full_name.split(" ").reverse.join(" ").split("")
+
     uppercase = false
+
     swapped_name.map! do |letter|
 
         if letter == letter.upcase
