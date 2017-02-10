@@ -44,6 +44,17 @@ def agent_spy_name (full_name)
     swapped_name.join("")
 end
 
-puts agent_spy_name("Andrew Jackson")
+# puts agent_spy_name("Andrew Jackson")
+# puts agent_spy_name("Felicia Torres")
 
-puts agent_spy_name("Felicia Torres")
+
+def name_randomizer
+    puts "Welcome to the Name Randomizer System. Type in a name to get a secret identity. First and Last Names only, please."
+    input = gets.chomp
+    while input != "quit"
+        p agent_spy_name(input)
+        input = gets.chomp
+    end
+end
+
+name_randomizer
