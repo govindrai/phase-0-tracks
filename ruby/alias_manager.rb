@@ -47,11 +47,22 @@ end
 
 
 def name_randomizer
+    real_names = []
+    secret_identities = []
+
     puts "Welcome to the Name Randomizer System. Type in a name to get a secret identity. First and Last Names only, please."
+
     input = gets.chomp
+
     while input != "quit"
-        p agent_spy_name(input)
+        real_names.push(input)
+        secret_identities.push(agent_spy_name(input))
+        p secret_identities.last
         input = gets.chomp
+    end
+
+    real_names.length.times do |i|
+        puts "#{secret_identities[i]} is actually #{real_names[i]}"
     end
 end
 
