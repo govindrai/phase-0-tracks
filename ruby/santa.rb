@@ -1,6 +1,6 @@
 class Santa
-    attr_reader :ethnicity, :age
-    attr_accessor :gender
+    attr_reader :ethnicity
+    attr_accessor :gender, :age
 
     def initialize(gender, ethnicity)
         @gender = gender
@@ -45,3 +45,12 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
+p santas
+
+100.times do |i|
+    santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+    santa.age = rand(141)
+    p santa.age
+    p santa.gender
+    p santa.ethnicity
+end
