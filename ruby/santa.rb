@@ -27,19 +27,6 @@ class Santa
         @reindeer_ranking.push(@reindeer_ranking.delete(name_of_reindeer
             ))
     end
-
-    # def age
-    #     @age
-    # end
-
-    # def ethnicity
-    #     @ethnicity
-    # end
-
-    # def gender=(new_gender)
-    #     @gender = new_gender
-    # end
-
 end
 
 santa = Santa.new('Male', 'Indian')
