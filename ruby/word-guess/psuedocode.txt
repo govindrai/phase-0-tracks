@@ -1,0 +1,21 @@
+# psuedocode #
+enter the word to guess
+create guessed_word string
+set guessed_word equal to many underscores as the length of word
+create empty guesses_array
+set the loop number to 0
+WHILE the loop number is still less than the length
+    let the user put in an string character
+    IF the user already guessed the string
+        tell them that but don't count a loop
+    ELSE IF there is a match
+        tell them that's definitely there!
+        change guessed_word to reflect the guess
+        increase the loop number
+    ELSE
+        tell them if there is not a match, 
+
+if guessed_word != input
+    taunt
+else 
+    congratulate
