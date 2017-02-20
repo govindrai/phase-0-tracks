@@ -27,17 +27,17 @@ class Hangman
         end
 
         # if the guess is a new letter, check whether the letter exists in the word. Use a variable ("match") to store the state of whether or not there was a match. If the letter exists, then update the hidden word string with the letter. Loop to get all occurrences of the letter
-        match = false
+        @match = false
         0..@word_length.times do |index|
             if letter == @word[index]
-                match = true
+                @match = true
                 # need to multiply index by 2 because there is a space after every underscore to make underscores legible
                 @hidden_word[index * 2] = letter
             end
         end
 
         # If the state of "match" never became true, let the user know that the letter does not exist in the hidden word. However, if the state of "match" became true, then first check to see if the word has been guessed correctly. If it is let them know they got it, and let them know the amount of guesses it took to guess it. Otherwise, just let them know they got a match.
-        if !match
+        if !@match
             puts "Sorry, #{letter} is does not exist in this word. Try again."
         else
             if @hidden_word.delete(' ') == @word
