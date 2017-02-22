@@ -5,12 +5,10 @@
 // then return the item with the biggest length
 
 function longestPhrase(array) {
-  var length = 0;
   var longestPhrase = '';
-  for (var index in array) {
-    if (array[index].length > length) {
-      length = array[index].length;
-      longestPhrase = array[index];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].length > longestPhrase.length) {
+      longestPhrase = array[i];
     }
   }
   return longestPhrase;
@@ -21,17 +19,14 @@ console.log(longestPhrase(['aaa','aa','a']))
 console.log(longestPhrase(['b','bb','bbb']))
 
 function objectsMatch(obj1, obj2) {
-  for (var property1 in obj1) {
-    for( var property2 in obj2) {
-      if (property1 === property2 && obj1[property1] === obj2[property2]) {
-        console.log(`This property exists in both objects: ${property1 + ':' + obj1[property1]}`);
-        return true;
-      }
+  for (var property in obj1) {
+    if (obj1[property] === obj2[property]) {
+      console.log(`This property exists in both objects: ${property + ':' + obj1[property]}`);
+      return true;
     }
   }
   return false;
 }
-
 
 console.log(objectsMatch({ name: "Govind", age: 23 }, { name: 'Govind', age:45 }));
 console.log(objectsMatch({ name: 'Sam', age: 42, gender: 'female' }, {name: "Salisha", age: 20, gender: 'female'}));
