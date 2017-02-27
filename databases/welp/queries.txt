@@ -1,0 +1,13 @@
+sqlite> SELECT * FROM businesses b INNER JOIN reviews r ON b.business_id = r.business_id INNER JOIN users u on u.user_id = r.user_id;
+1|Grundy Hollow Wedding|1|1|1|4|great food!|1|Brad|Pitt
+2|Amir's Towing|2|1|2|4|nice service and good food!|1|Brad|Pitt
+1|Grundy Hollow Wedding|3|3|1|5|clean bathrooms and nice staff|3|Denzel|Washington
+
+sqlite> SELECT first_name || ' ' || last_name, business_name, stars, comment  FROM businesses b INNER JOIN reviews r ON b.business_
+Brad Pitt|Grundy Hollow Wedding|4|great food!
+Brad Pitt|Amir's Towing|4|nice service and good food!
+Denzel Washington|Grundy Hollow Wedding|5|clean bathrooms and nice staff
+
+sqlite> SELECT first_name || ' ' || last_name, business_name, stars, comment  FROM businesses b INNER JOIN reviews r ON b.business_id = r.business_id INNER JOIN users u on u.user_id = r.user_id WHERE b.business_id = 1;
+Brad Pitt|Grundy Hollow Wedding|4|great food!
+Denzel Washington|Grundy Hollow Wedding|5|clean bathrooms and nice staff
