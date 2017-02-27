@@ -1,0 +1,33 @@
+sqlite> select * from Employees;
+employee_id  employer_id  employee_name  employee_address  ssn         date_of_hire
+-----------  -----------  -------------  ----------------  ----------  ------------
+1            1            Angel          Miami             2398238     2014        
+2            1            Maria          Miami             6238238     2011        
+3            2            Dexter         Miami             6233238     2010        
+4            2            Debra          Miami             623343238   2015  
+
+sqlite> UPDATE Employers SET employer_address = '1 Infinite Loop Cupertino, CA 95014' WHERE employer_id = 2;
+SELECT * FROM EMPLOYERS E INNER JOIN EMPLOYEES EE on E.employer_id = EE.employer_id;
+sqlite> SELECT * FROM EMPLOYERS E INNER JOIN EMPLOYEES EE on E.employer_id = EE.employer_id;
+employer_id  employer_name  employer_address  EIN_number  date_of_establishment  employee_id  employer_id  employee_name  employee_address  ssn         date_of_hire
+-----------  -------------  ----------------  ----------  ---------------------  -----------  -----------  -------------  ----------------  ----------  ------------
+1            Google         Mountain View     1238348     2012                   1            1            Angel          Miami             2398238     2014        
+1            Google         Mountain View     1238348     2012                   2            1            Maria          Miami             6238238     2011        
+2            Apple          1 Infinite Loop   32398348    1984                   3            2            Dexter         Miami             6233238     2010        
+2            Apple          1 Infinite Loop   32398348    1984                   4            2            Debra          Miami             623343238   2015 
+sqlite> SELECT employer_name, employee_name from Employers E inner join Employees EE on E.employer_id = EE.employer_id;
+employer_name  employee_name
+-------------  -------------
+Google         Angel        
+Google         Maria        
+Apple          Dexter       
+Apple          Debra 
+DELETE FROM Employees WHERE employee_name like 'D%';
+sqlite> select * from Employers e left join Employees ee on e.employer_id = ee.employer_id;
+employer_id  employer_name  employer_address  EIN_number  date_of_establishment  employee_id  employer_id  employee_name  employee_address  ssn         date_of_hire
+-----------  -------------  ----------------  ----------  ---------------------  -----------  -----------  -------------  ----------------  ----------  ------------
+1            Google         Mountain View     1238348     2012                   1            1            Angel          Miami             2398238     2014        
+1            Google         Mountain View     1238348     2012                   2            1            Maria          Miami             6238238     2011        
+2            Apple          1 Infinite Loop   32398348    1984            
+sqlite> select * from Employers e right join Employees ee on e.employer_id = ee.employer_id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
